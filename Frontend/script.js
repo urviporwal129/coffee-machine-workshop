@@ -1,5 +1,5 @@
 // Change this if your backend runs somewhere else
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://coffee-machine-workshop.onrender.com";
 
 // Get cart from localStorage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
