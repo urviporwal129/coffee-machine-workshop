@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coffee Menu</title>
+
+    <link rel="stylesheet" href="/Frontend/style.css">
+</head>
+
+<body>
+<script src="script.js"></script>
+    <div class="sidebar">
+
+        <img src="/Frontend/images/coffelogo.jpeg" alt="Coffee Logo" class="logo-img">
+
+        <h2>Coffee Machine</h2>
+
+        <nav>
+            <a href="/Frontend/index.html">🏡 Home</a>
+            <a href="/Frontend/menu.html">☕ Coffee Menu</a>
+            <a href="/Frontend/cart.html">🛒 Cart</a>
+            <a href="/Frontend/payment.html">🧾 Payment</a>
+            <a href="/Frontend/admin.html">🔐 Admin</a>
+        </nav>
+
+    </div>
+
+
+    <main class="content">
+
+        <h1> Our Coffee Menu</h1>
+
+        <div class="coffee-container">
+
+            <div class="coffee-card">
+                <h2>Espresso</h2>
+                <p>Strong and rich coffee</p>
+                <h3>₹40</h3>
+              <button onclick="addToCart(1,'Espresso',40,this)"> Add to Cart</button>
+                <label class="qnt"for="Quantity">Quantity </label>
+                <select class="quant" name="Quantity" id="Quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option> 
+            </select>
+          </div>
+
+            <div class="coffee-card">
+                <h2>Latte</h2>
+                <p>Smooth coffee with milk</p>
+                <h3>₹80</h3>
+                <button onclick="addToCart(2,'Latte',80,this)">Add to Cart</button>
+
+          <label class="qnt"for="Quantity">Quantity </label>
+                <select class="quant" name="Quantity" id="Quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option> 
+            </select>
+            </div>
+
+            <div class="coffee-card">
+                <h2>Cappuccino</h2>
+                <p>Rich coffee with milk foam</p>
+                <h3>₹100</h3>
+                <button onclick="addToCart( 3,'Cappuccino',100,this)">Add to Cart</button>
+
+          <label class="qnt"for="Quantity">Quantity </label>
+                <select class="quant" name="Quantity" id="Quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option> 
+            </select>
+            </div>
+
+            <div class="coffee-card">
+                <h2>Americano</h2>
+                <p>Espresso with hot water</p>
+                <h3>₹90</h3>
+                <button onclick="addToCart(4,'Americano',90,this)">Add to Cart</button>
+
+                <label class="qnt"for="Quantity">Quantity </label>
+                <select class="quant" name="Quantity" id="Quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option> 
+            </select>
+            </div>
+
+            <div class="coffee-card">
+                <h2>Cold Coffee</h2>
+                <p>Refreshing chilled coffee</p>
+                <h3>₹120</h3>
+                <button onclick="addToCart(5,'Cold Coffee', 120,this)">Add to Cart</button>
+   
+                <label class="qnt"for="Quantity">Quantity </label>
+                <select class="quant" name="Quantity" id="Quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option> 
+            </select>
+            </div>
+
+            <div class="coffee-card">
+                <h2>Chocolate Coffee</h2>
+                <p>Coffee with rich chocolate</p>
+                <h3>₹150</h3>
+               <button onclick="addToCart(6,'Chocolate Coffee',150,this)">Add to Cart</button>
+                 <label class="qnt"for="Quantity">Quantity </label>
+                <select class="quant" name="Quantity" id="Quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option> 
+            </select>
+            </div>
+
+        </div><div class="view-cart">
+    <a href="/Frontend/cart.html">🛒 View Cart</a>
+</div>
+
+    </main>
+
+    <!-- STOCK SHORTAGE POPUP -->
+    <div id="stock-error-modal" class="modal-overlay">
+        <div class="modal-box stock-error-box">
+            <h2>⚠️ Not Enough Stock</h2>
+            <p id="stock-error-message"></p>
+            <button onclick="closeStockErrorModal()">OK</button>
+        </div>
+    </div>
+
+</body>
+</html>

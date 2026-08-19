@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sip & Spill - Payment</title>
+
+    <link rel="stylesheet" href="/Frontend/style.css">
+</head>
+
+<body>
+
+    <div class="payment-page">
+
+        <h1>Complete Your Payment</h1>
+
+        <div class="payment-content">
+
+            <!-- LEFT: ORDER SUMMARY -->
+            <div class="bill">
+
+                <h2>Order Summary</h2>
+
+                <div id="bill-items">
+                    <!-- Cart items pulled from the cart page will appear here -->
+                </div>
+
+                <hr>
+
+                <h2>Total: ₹<span id="total-price">0</span></h2>
+
+            </div>
+
+            <!-- RIGHT: QR CODE + PAYMENT BUTTON -->
+            <div class="upi-section">
+
+                <h2>Scan & Pay</h2>
+
+                <p>Use any UPI app to complete your payment</p>
+
+                <div class="qr-container">
+                    <img src="/Frontend/images/qrcode.jpeg" class="upi-qr" alt="UPI QR Code">
+                </div>
+
+                <p class="scan-text">Scan the QR code to pay</p>
+
+                <button onclick="completePayment()">
+                    Payment Done
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PAYMENT SUCCESS POPUP -->
+    <div id="payment-modal" class="modal-overlay">
+        <div class="modal-box">
+            <h2>✅ Payment Successful!</h2>
+            <p>Thank you for your order ☕<br>We hope you enjoy your coffee!</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="/Frontend/script.js"></script>
+
+</body>
+
+</html>

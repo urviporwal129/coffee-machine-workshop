@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sip & Spill - Admin</title>
+
+    <link rel="stylesheet" href="/Frontend/style.css">
+
+    <!-- Chart.js — used to draw the sales pie chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ============================
+         LOGIN OVERLAY (shown first)
+    ============================= -->
+    <div id="login-overlay" class="admin-overlay">
+
+        <div class="admin-login-box">
+
+            <h1>🔐 Admin Login</h1>
+            <p>Enter the admin passcode to continue</p>
+
+            <input
+                type="password"
+                id="passcode-input"
+                placeholder="Passcode"
+                autocomplete="off"
+            >
+
+            <button onclick="attemptLogin()">Enter</button>
+
+            <p id="login-error" class="admin-error"></p>
+
+            <a href="/Frontend/index.html" class="admin-back-link">← Back to site</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================
+         DASHBOARD (hidden until login succeeds)
+    ============================= -->
+    <div id="dashboard" class="admin-dashboard" style="display: none;">
+
+        <div class="admin-header">
+            <h1>Admin Panel</h1>
+            <button onclick="logoutAdmin()" class="admin-logout-btn">Log Out</button>
+        </div>
+
+        <div class="admin-grid">
+
+            <!-- LEFT: SALES & ANALYTICS -->
+            <div class="admin-panel">
+
+                <h2>📊 Sales & Analytics</h2>
+
+                <div class="chart-container">
+                    <canvas id="sales-chart"></canvas>
+                </div>
+
+                <div class="admin-stats">
+                    <div class="stat-box">
+                        <span class="stat-label">🏆 Best Seller</span>
+                        <span class="stat-value" id="best-seller">—</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Total Coffees Sold</span>
+                        <span class="stat-value" id="total-coffees">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Total Orders</span>
+                        <span class="stat-value" id="total-orders">0</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT: INGREDIENT REPORT -->
+            <div class="admin-panel">
+
+                <h2>📦 Ingredient Report</h2>
+
+                <table class="ingredient-table">
+                    <thead>
+                        <tr>
+                            <th>Ingredient</th>
+                            <th>Starting</th>
+                            <th>Used</th>
+                            <th>Remaining</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ingredient-table-body">
+                        <!-- Rows filled in by admin.js -->
+                    </tbody>
+                </table>
+                 <div class="restock-section">
+                    <h3>Restock Ingredient</h3>
+                    <select id="restock-ingredient-select"></select>
+                    <input type="number" id="restock-amount" placeholder="Amount" min="1">
+                    <button onclick="restockIngredient()">Add Stock</button>
+                    <p id="restock-message"></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/Frontend/admin.js"></script>
+
+</body>
+
+</html>
