@@ -26,7 +26,7 @@ body {
     margin-left: 250px;
     min-height: 100vh;
 
-    background-image: url("/Frontend/images/backgroundmain.jpeg");
+    background-image: url("images/backgroundmain.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
